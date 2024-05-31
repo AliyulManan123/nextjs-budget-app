@@ -9,7 +9,7 @@ import { DateToUTCDate, GetFormatterForCurrency } from "@/lib/helpers";
 import { TransactionType } from "@/lib/types";
 import { UserSettings } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 
 interface Props {
   userSettings: UserSettings;
@@ -112,7 +112,7 @@ function CategoriesCard({
 
                     <Progress
                       value={percentage}
-                      indicator={
+                      className={
                         type === "income" ? "bg-emerald-500" : "bg-red-500"
                       }
                     />
