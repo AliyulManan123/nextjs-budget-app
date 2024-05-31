@@ -1,5 +1,3 @@
-/* eslint-disable max-lines */
-"use client";
 
 import { cn } from "@/lib/utils";
 import {
@@ -289,6 +287,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
 
   useEffect(() => {
     checkPreset();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [range]);
 
   const PresetButton = ({
@@ -330,6 +329,7 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
       openedRangeRef.current = range;
       openedRangeCompareRef.current = rangeCompare;
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
   return (
@@ -353,12 +353,10 @@ export const DateRangePicker: FC<DateRangePickerProps> & {
             </div>
             {rangeCompare != null && (
               <div className="opacity-60 text-xs -mt-1">
-                <>
-                  vs. {formatDate(rangeCompare.from, locale)}
+                vs. {formatDate(rangeCompare.from, locale)}
                   {rangeCompare.to != null
                     ? ` - ${formatDate(rangeCompare.to, locale)}`
                     : ""}
-                </>
               </div>
             )}
           </div>
